@@ -53,7 +53,13 @@ enum {
      * with the same total stride as the Y samples.
      * NV12 is the preferred 4:2:0 pixel format.
      */
-    HAL_PIXEL_FORMAT_NV12_TILED_INTEL = 0x100,
+    HAL_PIXEL_FORMAT_NV12_Y_TILED_INTEL = 0x100,
+
+    /**
+     * \deprecated alias name
+     * \see HAL_PIXEL_FORMAT_NV12_Y_TILED_INTEL
+     */
+    HAL_PIXEL_FORMAT_NV12_TILED_INTEL = HAL_PIXEL_FORMAT_NV12_Y_TILED_INTEL,
 
     /**
      * \todo
@@ -67,9 +73,9 @@ enum {
 
     /**
      * \deprecated alias name for use by legacy apps only
-     * \see HAL_PIXEL_FORMAT_NV12_TILED_INTEL
+     * \see HAL_PIXEL_FORMAT_NV12_Y_TILED_INTEL
      */
-    HAL_PIXEL_FORMAT_NV12_INTEL = HAL_PIXEL_FORMAT_NV12_TILED_INTEL,
+    HAL_PIXEL_FORMAT_NV12_INTEL = HAL_PIXEL_FORMAT_NV12_Y_TILED_INTEL,
 
     /**
      * \deprecated alias name for use by legacy apps only
@@ -78,7 +84,7 @@ enum {
     HAL_PIXEL_FORMAT_INTEL_NV12 = HAL_PIXEL_FORMAT_NV12_INTEL,
 
     /**
-     * HAL_PIXEL_FORMAT_YCrCb_422_H_INTEL is not defined in 
+     * HAL_PIXEL_FORMAT_YCrCb_422_H_INTEL is not defined in
      * ./system/core/include/system/graphics.h
      */
     HAL_PIXEL_FORMAT_YCrCb_422_H_INTEL = 0x102, // YV16
@@ -87,7 +93,72 @@ enum {
      * for the PACKED mode, pitch=width and no need any alignment for height
      */
     HAL_PIXEL_FORMAT_NV12_LINEAR_PACKED_INTEL = 0x103,
+
+    /**
+     * Three planes, 8 bit Y plane followed by 8 bit 2x1 subsampled U and V planes.
+     * Similar to IMC3 but U/V are full height.
+     * The width must be even.
+     * There are no specific restrictions on pitch, height and alignment.
+     * It can be linear or tiled if required.
+     *      __________________________
+     *      |Y0|Y1|                  |
+     *      |__|__|                  |
+     *     h|                        |
+     *      |____________w___________|
+     *      |U0|U1|      |
+     *     h|__|__|      |
+     *      |            |
+     *      |_____w/2____|
+     *      |V0|V1|      |
+     *     h|__|__|      |
+     *      |            |
+     *      |______w/2___|
+     */
+    HAL_PIXEL_FORMAT_YCbCr_422_H_INTEL = 0x104, // YU16
     
+    /**
+     * This is VXD specific NV12 X tile format.
+     * - stride: 512, 1024, 1280, 2048, 4096
+     * - height: must be 32 aligned
+     * - tiling: X-tiled
+     */
+    HAL_PIXEL_FORMAT_NV12_X_TILED_INTEL = 0x105,
+
+    /**
+     * Formats introduced for support on Android 4.4
+     * Fromats RGBA4 and RGB5_A1 were removed from Android code, 
+     * but still are required by EGL functionality (EGL image).
+     */
+    HAL_PIXEL_FORMAT_RGBA_5551_INTEL = 0x106,
+    HAL_PIXEL_FORMAT_RGBA_4444_INTEL = 0x107,
+
+    /**
+     * only 8 bit y plane. 
+     */
+    HAL_PIXEL_FORMAT_GENERIC_8BIT_INTEL = 0x108,
+
+    /**
+     * Three planes, 8 bit Y plane followed by U, V plane with 1/4 width and full height.
+     * The U and V planes have the same stride as the Y plane.
+     */
+    HAL_PIXEL_FORMAT_YCbCr_411_INTEL    = 0x109,
+
+    /**
+     * Three planes, 8 bit Y plane followed by U, V plane with 1/2 width and 1/2 height.
+     * The U and V planes have the same stride as the Y plane.
+     */
+    HAL_PIXEL_FORMAT_YCbCr_420_H_INTEL  = 0x10A,
+
+    /**
+     * Three planes, 8 bit Y plane followed by U, V plane with full width and 1/2 height.
+     */
+    HAL_PIXEL_FORMAT_YCbCr_422_V_INTEL  = 0x10B,
+
+    /**
+     * Three planes, 8 bit Y plane followed by U, V plane with full width and full height.
+     */   
+    HAL_PIXEL_FORMAT_YCbCr_444_INTEL    = 0x10C,
+
     /**
      * \note THIS WILL BE GOING AWAY!
      *
