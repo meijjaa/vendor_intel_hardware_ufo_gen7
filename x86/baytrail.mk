@@ -57,6 +57,7 @@ include $(CLEAR_VARS)
 LOCAL_COPY_HEADERS_TO := ufo
 LOCAL_COPY_HEADERS := $(TARGET_ARCH)/graphics.h
 LOCAL_COPY_HEADERS += $(TARGET_ARCH)/gralloc.h
+LOCAL_COPY_HEADERS += $(TARGET_ARCH)/iVP.h
 include $(BUILD_COPY_HEADERS)
 
 # The intersection of the library sets are placed at this level, the rest of
