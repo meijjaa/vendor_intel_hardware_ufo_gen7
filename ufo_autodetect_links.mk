@@ -6,7 +6,7 @@ SP_UFO_CREATE_SYMLINKS:
 	@ln -sf $(HAL_BM_TARGET_GFX)/bin/coreu $(TARGET_OUT)/bin/;
 	@ln -sf $(HAL_BM_TARGET_GFX)/bin/mediainfo $(TARGET_OUT)/bin/;
 #	@ln -sf $(HAL_BM_TARGET_GFX)/bin/curd $(TARGET_OUT)/bin/;
-#	@ln -sf $(HAL_BM_TARGET_GFX)/bin/hdcpd $(TARGET_OUT)/bin/;
+	@ln -sf $(HAL_BM_TARGET_GFX)/bin/hdcpd $(TARGET_OUT)/bin/;
 	
 	@echo "Creating links in $(TARGET_OUT)/lib"
 	@mkdir -p $(TARGET_OUT)/lib
@@ -24,9 +24,9 @@ SP_UFO_CREATE_SYMLINKS:
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libcoreuservice.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libgsmgr.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libuevent.so $(TARGET_OUT)/lib/
-#	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libpavpdll.so $(TARGET_OUT)/lib/
-#	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libpavp.so $(TARGET_OUT)/lib/
-#	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libpcp.so $(TARGET_OUT)/lib/
+	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libpavpdll.so $(TARGET_OUT)/lib/
+	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libpavp.so $(TARGET_OUT)/lib/
+	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libpcp.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libskuwa.so $(TARGET_OUT)/lib/
 
 	@echo "Creating links in $(TARGET_OUT)/lib/egl"
