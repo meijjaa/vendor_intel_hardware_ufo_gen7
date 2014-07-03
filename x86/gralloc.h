@@ -80,6 +80,8 @@ enum {
     INTEL_UFO_GRALLOC_MODULE_PERFORM_SET_BO_KEY_FRAME   = 16,   // (buffer_handle_t, uint32_t is_key_frame)
     INTEL_UFO_GRALLOC_MODULE_PERFORM_SET_BO_CODEC_TYPE  = 17,   // (buffer_handle_t, uint32_t codec, uint32_t is_interlaced)
     INTEL_UFO_GRALLOC_MODULE_PERFORM_SET_BO_DIRTY_RECT  = 18,   // (buffer_handle_t, uint32_t valid, uint32_t left, uint32_t top, uint32_t right, uint32_t bottom)
+    INTEL_UFO_GRALLOC_MODULE_PERFORM_QUERY_GMM_PARAMS   = 19,   // (buffer_handle_t, GMM_RESCREATE_PARAMS* params)
+    INTEL_UFO_GRALLOC_MODULE_PERFORM_PROBE_BUFFER_GEOMETRY = 20,// FIXME PLACEHOLDER (intel_ufo_buffer_geometry_t*)
 };
 
 
