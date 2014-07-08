@@ -39,7 +39,7 @@ SP_UFO_CREATE_SYMLINKS:
 	@echo "Creating links in $(TARGET_OUT)/lib/hw"
 	@mkdir -p $(TARGET_OUT)/lib/hw
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/hw/hwcomposer.irda.so $(TARGET_OUT)/lib/hw/hwcomposer.irda.so
-	@ln -sf $(HAL_BM_TARGET_GFX)/lib/hw/gralloc.irda.so $(TARGET_OUT)/lib/hw/gralloc.irda.so
+	@ln -sf $(HAL_BM_TARGET_GFX)/lib/hw/gralloc.irda.so $(TARGET_OUT)/lib/hw/gralloc.autodetect.so
 
 	@echo "Creating links in ufo_byt"
 	@mkdir -p $(TARGET_OUT)/vendor/gfx/ufo_byt/lib/egl
