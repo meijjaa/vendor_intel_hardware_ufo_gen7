@@ -266,7 +266,7 @@ typedef unsigned int iVPCtxID;                        //Context of the iVP
 //          height    should be any non-zero value
 //
 //*****************************************************************************
-iVP_status iVP_create_context(iVPCtxID *ctx, unsigned int width, unsigned int height);
+iVP_status iVP_create_context(iVPCtxID *ctx, unsigned int width, unsigned int height, unsigned int vpCapabilityFlag = 0);
 
 //*****************************************************************************
 //
