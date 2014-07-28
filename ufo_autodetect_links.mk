@@ -13,7 +13,6 @@ SP_UFO_CREATE_SYMLINKS:
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libhwcservice.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libgrallocclient.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libgrallocgmm.so $(TARGET_OUT)/lib/
-	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libvpwrapper.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/i965_drv_video.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libivp.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/igfxcmjit32.so $(TARGET_OUT)/lib/
