@@ -64,6 +64,15 @@ __BEGIN_DECLS
 
 #define FILTER_COLORBALANCE_PARAM_SIZE      4  // Colorbalance filter parameters size is 4.
 
+#define IVP_SUPPORTS_LEVEL_EXPANSION        1  // flag to indicate whether level expansion is supported
+
+// width and height could be any value, it is just used by VAAPI.
+#define IVP_DEFAULT_WIDTH    1280
+#define IVP_DEFAULT_HEIGHT   720
+
+// the flag is defined to just sync with mainline
+#define IVP_DEFAULT_CAPABLILITY 0   // All supported VEBOX feature
+
 // Available encryption types
 typedef enum
 {
