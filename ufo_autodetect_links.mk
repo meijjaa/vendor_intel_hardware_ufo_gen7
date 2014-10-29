@@ -31,6 +31,7 @@ SP_UFO_CREATE_SYMLINKS:
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libRSDriverMlc_intel7.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libRSDriverUmd_intel7.so $(TARGET_OUT)/lib/
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libRSDriver_intel7.so $(TARGET_OUT)/lib/
+	@ln -sf $(HAL_BM_TARGET_GFX)/lib/libigdbcl.so $(TARGET_OUT)/lib/
 
 	@echo "Creating links in $(TARGET_OUT)/lib/egl"
 	@mkdir -p $(TARGET_OUT)/lib/egl
