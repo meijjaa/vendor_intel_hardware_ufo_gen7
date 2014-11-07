@@ -7,6 +7,7 @@ SP_UFO_CREATE_SYMLINKS:
 	@ln -sf $(HAL_BM_TARGET_GFX)/bin/mediainfo $(TARGET_OUT)/bin/;
 #	@ln -sf $(HAL_BM_TARGET_GFX)/bin/curd $(TARGET_OUT)/bin/;
 	@ln -sf $(HAL_BM_TARGET_GFX)/bin/hdcpd $(TARGET_OUT)/bin/;
+	@ln -sf $(HAL_BM_TARGET_GFX)/bin/igfxSettings $(TARGET_OUT)/bin/;
 	
 	@echo "Creating links in $(TARGET_OUT)/lib"
 	@mkdir -p $(TARGET_OUT)/lib
