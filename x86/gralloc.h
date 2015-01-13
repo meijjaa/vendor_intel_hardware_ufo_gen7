@@ -123,7 +123,7 @@ enum {
     INTEL_UFO_GRALLOC_MODULE_PERFORM_SET_BO_CODEC_TYPE     = 17,   // (buffer_handle_t, uint32_t codec, uint32_t is_interlaced)
     INTEL_UFO_GRALLOC_MODULE_PERFORM_SET_BO_DIRTY_RECT     = 18,   // (buffer_handle_t, uint32_t valid, uint32_t left, uint32_t top, uint32_t right, uint32_t bottom)
     INTEL_UFO_GRALLOC_MODULE_PERFORM_QUERY_GMM_PARAMS      = 19,   // (buffer_handle_t, GMM_RESCREATE_PARAMS* params)
-    INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_PRIME          = 24,   // (buffer_handle_t, int *prime)
+    INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_PRIME          = 20,   // (buffer_handle_t, int *prime)
     INTEL_UFO_GRALLOC_MODULE_PERFORM_REGISTER_HWC_PROCS    = 21,   // (const intel_ufo_hwc_procs_t*)
     INTEL_UFO_GRALLOC_MODULE_PERFORM_SET_BO_FRAME_UPDATED  = 22,   // (buffer_handle_t, uint32_t is_updated)
     INTEL_UFO_GRALLOC_MODULE_PERFORM_SET_BO_FRAME_ENCODED  = 23,   // (buffer_handle_t, uint32_t is_encoded)
