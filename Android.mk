@@ -8,7 +8,11 @@ ifeq ($(strip $(UFO_ENABLE_GEN)),gen7)
 ifeq ($(USE_INTEL_UFO_DRIVER),true)
 ifneq ($(BOARD_HAVE_GEN_GFX_SRC),true)
 
+ifeq ($(HAL_AUTODETECT),true)
+include $(LOCAL_PATH)/ufo_autodetect.mk
+else
 include $(LOCAL_PATH)/$(TARGET_ARCH)/baytrail.mk
+endif # HAL_AUTODETECT
 
 endif # BOARD_HAVE_GEN_GFX_SRC 
 endif # USE_INTEL_UFO_DRIVER

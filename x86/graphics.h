@@ -497,6 +497,118 @@ enum {
     HAL_PIXEL_FORMAT_P010_INTEL = 0x110,
 
     /**
+     * Intel Z16 format.
+     *
+     * Used by DS4 camera to represent depth.
+     *
+     * Layout information:
+     * - each pixel being represented by 16 bits (2 bytes)
+     * - no width/height restrictions
+     * - hstride is width
+     * - hstride is specified in pixels, not in bytes
+     * - vstride is height
+     * - memory is linear
+     *
+     *       ____________w___________
+     *      |Z0|Z1                   |
+     *      |                        |
+     *      h                        h
+     *      |                        |
+     *      |                        |
+     *      |____________w___________|
+     *
+     *      pitch (in bytes) = w*2
+     *      size (in bytes) = w*h*2
+     */
+    HAL_PIXEL_FORMAT_Z16_INTEL = 0x111,
+
+    /**
+     * Intel UVMAP format.
+     *
+     * Used by DS4 camera to represent depth to color map.
+     *
+     * Layout information:
+     * - each pixel being represented by 64 bits (8 bytes)
+     * - no width/height restrictions
+     * - hstride is width
+     * - hstride is specified in pixels, not in bytes
+     * - vstride is height
+     * - memory is linear
+     *
+     *       ____________w___________
+     *      |m0|m1                   |
+     *      |                        |
+     *      h                        h
+     *      |                        |
+     *      |                        |
+     *      |____________w___________|
+     *
+     *      pitch (in bytes) = w*8
+     *      size (in bytes) = w*h*8
+     */
+    HAL_PIXEL_FORMAT_UVMAP64_INTEL = 0x112,
+
+    /**
+     * Intel A2RGB10 format.
+     *
+     * Used for 10bit video processing.
+     *
+     * \see GMM_FORMAT_B10G10R10A2_UNORM
+     *
+     *       ________________________ .....
+     *      |BGRA|BGRA|              |    :
+     *      |                        |    :
+     *      h                        h    h'
+     *      |____________w___________|    :
+     *      :                             :
+     *      :............stride...........:
+     *
+     *       bits
+     *      +----+--------------------+--------------------+--------------------+
+     *      |3130|29                20|19                10|09                 0|
+     *      +----+--------------------+--------------------+--------------------+
+     *      |A1A0|R9R8R7R6R5R4R3R2R1R0|G9G8G7G6G5G4G3G2G1G0|B9B8B7B6B5B4B3B2B1B0|
+     *      +----+--------------------+--------------------+--------------------+
+     *
+     *       byte 0           byte 1           byte 2           byte 3
+     *      +----------------+----------------+----------------+----------------+
+     *      |B7B6B5B4B3B2B1B0|G5G4G3G2G1G0B9B8|R3R2R1R0G9G8G7G6|A1A0R9R8R7R6R5R4|
+     *      +----------------+----------------+----------------+----------------+
+     *
+     */
+    HAL_PIXEL_FORMAT_A2R10G10B10_INTEL = 0x113,
+
+    /**
+     * Intel A2RGB10 format.
+     *
+     * Used for 10bit video processing.
+     *
+     * \see GMM_FORMAT_R10G10B10A2_UNORM
+     *
+     *       ________________________ .....
+     *      |RGBA|RGBA|              |    :
+     *      |                        |    :
+     *      h                        h    h'
+     *      |____________w___________|    :
+     *      :                             :
+     *      :............stride...........:
+     *
+     *       bits
+     *      +----+--------------------+--------------------+--------------------+
+     *      |3130|29                20|19                10|09                 0|
+     *      +----+--------------------+--------------------+--------------------+
+     *      |A1A0|R9R8R7R6R5R4R3R2R1R0|G9G8G7G6G5G4G3G2G1G0|B9B8B7B6B5B4B3B2B1B0|
+     *      +----+--------------------+--------------------+--------------------+
+     *
+     *       byte 0           byte 1           byte 2           byte 3
+     *      +----------------+----------------+----------------+----------------+
+     *      |R7R6R5R4R3R2R1R0|G5G4G3G2G1G0R9R8|B3B2B1B0B9B8B7B6|A1A0B9B8B7B6B5B4|
+     *      +----------------+----------------+----------------+----------------+
+     *
+     */
+    HAL_PIXEL_FORMAT_A2B10G10R10_INTEL = 0x114,
+
+    /**
      * \deprecated alias name
      * \see HAL_PIXEL_FORMAT_NV12_Y_TILED_INTEL
      */
