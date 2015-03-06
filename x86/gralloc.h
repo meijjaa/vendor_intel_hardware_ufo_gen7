@@ -49,7 +49,11 @@ extern "C" {
  * \see INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_INFO
  * \see INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_PRIME
  */
+#ifdef ANDROID_GMIN
 #define INTEL_UFO_GRALLOC_HAVE_PRIME 0
+#else
+#define INTEL_UFO_GRALLOC_HAVE_PRIME 0
+#endif
 
 
 /** Gralloc support for (legacy) flink names.
@@ -162,7 +166,7 @@ typedef struct intel_ufo_buffer_details_t
     int prime;       // prime fd \note gralloc retains fd ownership
 #endif
 #if INTEL_UFO_GRALLOC_DEPRECATE_FLINK
-  union { 
+  union {
     int name __attribute__ ((deprecated));
     int name_DEPRECATED;
   };
@@ -335,7 +339,7 @@ typedef union intel_ufo_bo_datatype_t {
 #else /* INTEL_UFO_GRALLOC_MEDIA_API_STAGE */
 
 /*
- * At this stage intel_ufo_bo_datatype_t is not exposed by gralloc! 
+ * At this stage intel_ufo_bo_datatype_t is not exposed by gralloc!
  */
 
 #endif /* INTEL_UFO_GRALLOC_MEDIA_API_STAGE */
