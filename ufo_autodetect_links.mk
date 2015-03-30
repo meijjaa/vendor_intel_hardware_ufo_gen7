@@ -46,8 +46,8 @@ endif # USE_INTEL_UFO_OPENCL
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib/hw/gralloc.$(TARGET_BOARD_PLATFORM).so $(TARGET_OUT)/lib/hw/gralloc.autodetect.so
 
 	@echo "Creating links in ufo_byt"
-	@mkdir -p $(TARGET_OUT)/vendor/gfx/ufo_byt/lib/egl
-	@ln -sf ./libGLES_intel7.so $(TARGET_OUT)/vendor/gfx/ufo_byt/lib/egl/libGLES_intel.so
+	@mkdir -p $(TARGET_OUT_VENDOR)/gfx/ufo_byt/lib/egl
+	@ln -sf ./libGLES_intel7.so $(TARGET_OUT_VENDOR)/gfx/ufo_byt/lib/egl/libGLES_intel.so
 
 ifeq (x86_64,$(TARGET_ARCH))
 	@mkdir -p $(TARGET_OUT)/lib64
@@ -87,8 +87,8 @@ ifeq (x86_64,$(TARGET_ARCH))
 	@ln -sf $(HAL_BM_TARGET_GFX)/lib64/hw/gralloc.$(TARGET_BOARD_PLATFORM).so $(TARGET_OUT)/lib64/hw/gralloc.autodetect.so
 
 	@echo "Creating links in ufo_byt"
-	@mkdir -p $(TARGET_OUT)/vendor/gfx/ufo_byt/lib64/egl
-	@ln -sf ./libGLES_intel7.so $(TARGET_OUT)/vendor/gfx/ufo_byt/lib64/egl/libGLES_intel.so
+	@mkdir -p $(TARGET_OUT_VENDOR)/gfx/ufo_byt/lib64/egl
+	@ln -sf ./libGLES_intel7.so $(TARGET_OUT_VENDOR)/gfx/ufo_byt/lib64/egl/libGLES_intel.so
 endif
 
 ALL_DEFAULT_INSTALLED_MODULES += SP_UFO_CREATE_SYMLINKS
