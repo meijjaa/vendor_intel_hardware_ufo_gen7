@@ -1,0 +1,7 @@
+x86/vendor/bin
+x86_64/vendor/bin
+x86_64/lib
+x86_64/vendor/lib
+
+*.disabled.*
+igfxSettings
