@@ -23,6 +23,12 @@ define prebuilt-rule
     UFO_MODULE_NAME := $$(basename $$(basename $$(notdir $(1))))
     ifeq ($$(dir $(1)),hw/)
         UFO_REQUIRED_MODULE := $$(UFO_MODULE_NAME).ufo
+    else ifeq ($(3),true)
+        ifeq ($$(suffix $(1)),.so)
+            UFO_REQUIRED_MODULE := $$(UFO_MODULE_NAME)
+        else
+            UFO_REQUIRED_MODULE := $$(notdir $(1))
+        endif # suffix = so
     else
         UFO_REQUIRED_MODULE := $$(UFO_MODULE_NAME)
     endif # dirpath = hw
