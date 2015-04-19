@@ -43,28 +43,25 @@ extern "C" {
 
 
 /** Gralloc support for drm prime fds.
+ * \note Mandatory (more secure) mechanism for buffer sharing.
  * \note if non-zero, then prime fds are supported and used as buffer sharing mechanism.
  * \note if zero or undefined, then prime fds are not supported (flink names are used instead).
  * \see INTEL_UFO_GRALLOC_HAVE_FLINK
  * \see INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_INFO
  * \see INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_PRIME
  */
-#ifdef ANDROID_GMIN
-#define INTEL_UFO_GRALLOC_HAVE_PRIME 0
-#else
-#define INTEL_UFO_GRALLOC_HAVE_PRIME 0
-#endif
+#define INTEL_UFO_GRALLOC_HAVE_PRIME 1
 
 
 /** Gralloc support for (legacy) flink names.
+ * \note Deprecated due to security requirements.
  * \note if zero, then flink names are not available (prime fds are used instead).
  * \note if non-zero, then gralloc supports flink names.
  * \see INTEL_UFO_GRALLOC_HAVE_PRIME
  * \see INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_NAME
  * \see INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_INFO
  */
-#define INTEL_UFO_GRALLOC_HAVE_FLINK (1 || !(INTEL_UFO_GRALLOC_HAVE_PRIME))
-
+#define INTEL_UFO_GRALLOC_HAVE_FLINK !(INTEL_UFO_GRALLOC_HAVE_PRIME)
 
 // Enable for FB reference counting.
 #define INTEL_UFO_GRALLOC_HAVE_FB_REF_COUNTING 1
@@ -164,15 +161,14 @@ typedef struct intel_ufo_buffer_details_t
     int usage;       // \see alloc_device_t::alloc
 #if INTEL_UFO_GRALLOC_HAVE_PRIME
     int prime;       // prime fd \note gralloc retains fd ownership
-#endif
-#if INTEL_UFO_GRALLOC_DEPRECATE_FLINK
+#elif INTEL_UFO_GRALLOC_DEPRECATE_FLINK
   union {
     int name __attribute__ ((deprecated));
     int name_DEPRECATED;
   };
 #else
     int name;        // flink
-#endif
+#endif // INTEL_UFO_GRALLOC_HAVE_PRIME
     uint32_t fb;        // framebuffer id
     uint32_t fb_format; // framebuffer drm format
     int pitch;       // buffer pitch (in bytes)
