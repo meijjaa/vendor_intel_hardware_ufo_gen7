@@ -64,9 +64,7 @@ define prebuilt-rule
         else
             LOCAL_SRC_FILES := $$(TARGET_ARCH)/bin/$(1)
         endif # LOCAL_PROPRIETARY_MODULE
-        ifneq ($$(LOCAL_MODULE),msync)
-            LOCAL_MODULE_PATH := $$(LOCAL_MODULE_PATH_GFX_BIN)
-        endif # LOCAL_MODULE != msync
+        LOCAL_MODULE_PATH := $$(LOCAL_MODULE_PATH_GFX_BIN)
     else ifeq ($$(LOCAL_MODULE_CLASS),ETC)
         ifeq ($$(LOCAL_PROPRIETARY_MODULE),true)
             LOCAL_SRC_FILES := $$(TARGET_ARCH)/vendor/$(1)
