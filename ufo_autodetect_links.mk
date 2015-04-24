@@ -30,10 +30,8 @@ SP_UFO_CREATE_SYMLINKS:
 				ln -sf $(HAL_BM_TARGET_GFX)/$$p $(TARGET_OUT)/$$(dirname $$p)/; \
 			fi; \
 		else \
-			if [ "$$(basename $$p)" != "msync" ]; then \
-				mkdir -p $(TARGET_OUT)/$$(dirname $$p); \
-				ln -sf $(HAL_BM_TARGET_GFX)/$$p $(TARGET_OUT)/$$(dirname $$p)/; \
-			fi; \
+			mkdir -p $(TARGET_OUT)/$$(dirname $$p); \
+			ln -sf $(HAL_BM_TARGET_GFX)/$$p $(TARGET_OUT)/$$(dirname $$p)/; \
 		fi; \
 	done;
 
