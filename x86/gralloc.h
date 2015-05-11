@@ -50,7 +50,7 @@ extern "C" {
  * \see INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_INFO
  * \see INTEL_UFO_GRALLOC_MODULE_PERFORM_GET_BO_PRIME
  */
-#define INTEL_UFO_GRALLOC_HAVE_PRIME 1
+#define INTEL_UFO_GRALLOC_HAVE_PRIME 0
 
 
 /** Gralloc support for (legacy) flink names.

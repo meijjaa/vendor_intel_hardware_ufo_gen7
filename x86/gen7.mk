@@ -5,10 +5,10 @@ UFO_REQUIRED_MODULES :=
 UFO_PREBUILT_LIBS := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/lib/* -not -type d)
 UFO_PREBUILT_LIBS := $(patsubst $(LOCAL_PATH)/$(TARGET_ARCH)/lib/%, %, $(UFO_PREBUILT_LIBS))
 UFO_PREBUILT_LIBS := $(filter-out %disabled.so,$(UFO_PREBUILT_LIBS))
-UFO_PREBUILT_LIBS := $(filter-out %igfxSettings,$(UFO_PREBUILT_LIBS))
 
 UFO_PREBUILT_BINS := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/bin/* -not -type d)
 UFO_PREBUILT_BINS := $(patsubst $(LOCAL_PATH)/$(TARGET_ARCH)/bin/%, %, $(UFO_PREBUILT_BINS))
+UFO_PREBUILT_BINSS := $(filter-out %igfxSettings,$(UFO_PREBUILT_BINS))
 
 UFO_PREBUILT_ETC := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/etc/* -not -type d)
 UFO_PREBUILT_ETC := $(patsubst $(LOCAL_PATH)/$(TARGET_ARCH)/etc/%, %, $(UFO_PREBUILT_ETC))
