@@ -2,21 +2,21 @@ ifneq ($(BOARD_HAVE_GEN_GFX_SRC),true)
 
 UFO_REQUIRED_MODULES :=
 
-UFO_PREBUILT_LIBS := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/lib/* -not -type d)
+UFO_PREBUILT_LIBS := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/lib/ -not -type d)
 UFO_PREBUILT_LIBS := $(patsubst $(LOCAL_PATH)/$(TARGET_ARCH)/lib/%, %, $(UFO_PREBUILT_LIBS))
 UFO_PREBUILT_LIBS := $(filter-out %disabled.so,$(UFO_PREBUILT_LIBS))
 
-UFO_PREBUILT_BINS := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/bin/* -not -type d)
+UFO_PREBUILT_BINS := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/bin/ -not -type d)
 UFO_PREBUILT_BINS := $(patsubst $(LOCAL_PATH)/$(TARGET_ARCH)/bin/%, %, $(UFO_PREBUILT_BINS))
-UFO_PREBUILT_BINSS := $(filter-out %igfxSettings,$(UFO_PREBUILT_BINS))
+UFO_PREBUILT_BINS := $(filter-out %igfxSettings,$(UFO_PREBUILT_BINS))
 
-UFO_PREBUILT_ETC := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/etc/* -not -type d)
+UFO_PREBUILT_ETC := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/etc/ -not -type d)
 UFO_PREBUILT_ETC := $(patsubst $(LOCAL_PATH)/$(TARGET_ARCH)/etc/%, %, $(UFO_PREBUILT_ETC))
 
-UFO_VENDOR_LIBS := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/vendor/lib/* -not -type d)
+UFO_VENDOR_LIBS := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/vendor/lib/ -not -type d)
 UFO_VENDOR_LIBS := $(patsubst $(LOCAL_PATH)/$(TARGET_ARCH)/vendor/lib/%, %, $(UFO_VENDOR_LIBS))
 
-UFO_VENDOR_ETC := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/vendor/* -not -type d -not -path "*/bin/*" -not -path "*/lib/*")
+UFO_VENDOR_ETC := $(shell find $(LOCAL_PATH)/$(TARGET_ARCH)/vendor/ -not -type d -not -path "*/bin/*" -not -path "*/lib/*")
 UFO_VENDOR_ETC := $(patsubst $(LOCAL_PATH)/$(TARGET_ARCH)/vendor/%, %, $(UFO_VENDOR_ETC))
 
 define prebuilt-rule
