@@ -2,30 +2,30 @@ ifneq ($(BOARD_HAVE_GEN_GFX_SRC),true)
 
 UFO_REQUIRED_MODULES :=
 
-UFO_PREBUILT_LIBS := $(shell find $(LOCAL_PATH)/x86_64/lib64/* -not -type d)
+UFO_PREBUILT_LIBS := $(shell find $(LOCAL_PATH)/x86_64/lib64/ -not -type d)
 UFO_PREBUILT_LIBS := $(patsubst $(LOCAL_PATH)/x86_64/lib64/%, %, $(UFO_PREBUILT_LIBS))
 UFO_PREBUILT_LIBS := $(filter-out %disabled.so,$(UFO_PREBUILT_LIBS))
 
-UFO_PREBUILT_32_LIBS := $(shell find $(LOCAL_PATH)/x86/lib/* -not -type d)
+UFO_PREBUILT_32_LIBS := $(shell find $(LOCAL_PATH)/x86/lib/ -not -type d)
 UFO_PREBUILT_32_LIBS := $(patsubst $(LOCAL_PATH)/x86/lib/%, %, $(UFO_PREBUILT_32_LIBS))
 UFO_PREBUILT_32_LIBS := $(filter-out %disabled.so,$(UFO_PREBUILT_32_LIBS))
 UNIQUE_UFO_PREBUILTS_32_LIBS := $(UFO_PREBUILTS_32_LIBS)
 
-UFO_PREBUILT_BINS := $(shell find $(LOCAL_PATH)/x86_64/bin/* -not -type d)
+UFO_PREBUILT_BINS := $(shell find $(LOCAL_PATH)/x86_64/bin/ -not -type d)
 UFO_PREBUILT_BINS := $(patsubst $(LOCAL_PATH)/x86_64/bin/%, %, $(UFO_PREBUILT_BINS))
 UFO_PREBUILT_BINS := $(filter-out %igfxSettings,$(UFO_PREBUILT_BINS))
 
-UFO_PREBUILT_ETC := $(shell find $(LOCAL_PATH)/x86_64/etc/* -not -type d)
+UFO_PREBUILT_ETC := $(shell find $(LOCAL_PATH)/x86_64/etc/ -not -type d)
 UFO_PREBUILT_ETC := $(patsubst $(LOCAL_PATH)/x86_64/etc/%, %, $(UFO_PREBUILT_ETC))
 
-UFO_VENDOR_LIBS := $(shell find $(LOCAL_PATH)/x86_64/vendor/lib64/* -not -type d)
+UFO_VENDOR_LIBS := $(shell find $(LOCAL_PATH)/x86_64/vendor/lib64/ -not -type d)
 UFO_VENDOR_LIBS := $(patsubst $(LOCAL_PATH)/x86_64/vendor/lib64/%, %, $(UFO_VENDOR_LIBS))
 
-UFO_VENDOR_32_LIBS := $(shell find $(LOCAL_PATH)/x86/vendor/lib/* -not -type d)
+UFO_VENDOR_32_LIBS := $(shell find $(LOCAL_PATH)/x86/vendor/lib/ -not -type d)
 UFO_VENDOR_32_LIBS := $(patsubst $(LOCAL_PATH)/x86/vendor/lib/%, %, $(UFO_VENDOR_32_LIBS))
 UNIQUE_UFO_VENDOR_32_LIBS := $(UFO_VENDOR_32_LIBS)
 
-UFO_VENDOR_ETC := $(shell find $(LOCAL_PATH)/x86_64/vendor/* -not -type d -not -path "*/bin/*" -not -path "*/lib64/*" -not -path "*/lib/*")
+UFO_VENDOR_ETC := $(shell find $(LOCAL_PATH)/x86_64/vendor/ -not -type d -not -path "*/bin/*" -not -path "*/lib64/*" -not -path "*/lib/*")
 UFO_VENDOR_ETC := $(patsubst $(LOCAL_PATH)/x86_64/vendor/%, %, $(UFO_VENDOR_ETC))
 
 define prebuilt-rule
