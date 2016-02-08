@@ -36,6 +36,7 @@ define prebuilt-rule
 
     include $$(CLEAR_VARS)
 
+    LOCAL_STRIP_MODULE := false
     LOCAL_MODULE := $$(UFO_REQUIRED_MODULE)
     LOCAL_MODULE_RELATIVE_PATH := $$(dir $(1))
     ifeq ($$(LOCAL_MODULE_RELATIVE_PATH),hw/)
