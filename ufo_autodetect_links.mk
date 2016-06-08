@@ -29,8 +29,8 @@ UFO_PREBUILT_LINK_PAIRS += \
 
 # x86/lib/hw/
 UFO_PREBUILT_LINK_PAIRS += \
-	$(TARGET_OUT)/lib/hw/hwcomposer.$(TARGET_BOARD_PLATFORM).so:../../..$(HAL_BM_TARGET_GFX)/lib/hw/hwcomposer.$(TARGET_BOARD_PLATFORM).so \
-	$(TARGET_OUT)/lib/hw/gralloc.autodetect.so:../../..$(HAL_BM_TARGET_GFX)/lib/hw/gralloc.$(TARGET_BOARD_PLATFORM).so
+	$(TARGET_OUT)/lib/hw/hwcomposer.ufo7.so:../../..$(HAL_BM_TARGET_GFX)/lib/hw/hwcomposer.ufo7.so \
+	$(TARGET_OUT)/lib/hw/gralloc.autodetect.so:../../..$(HAL_BM_TARGET_GFX)/lib/hw/gralloc.ufo7.so
 
 ifeq ($(USE_INTEL_UFO_OPENCL),true)
 PREBUILTS := $(shell cd $(LOCAL_PATH)/x86/ && find vendor/lib -not -type d)
@@ -50,8 +50,8 @@ UFO_PREBUILT_LINK_PAIRS += \
 
 # x86_64/lib64/hw/
 UFO_PREBUILT_LINK_PAIRS += \
-	$(TARGET_OUT)/lib64/hw/hwcomposer.$(TARGET_BOARD_PLATFORM).so:../../..$(HAL_BM_TARGET_GFX)/lib64/hw/hwcomposer.$(TARGET_BOARD_PLATFORM).so \
-	$(TARGET_OUT)/lib64/hw/gralloc.autodetect.so:../../..$(HAL_BM_TARGET_GFX)/lib64/hw/gralloc.$(TARGET_BOARD_PLATFORM).so
+	$(TARGET_OUT)/lib64/hw/hwcomposer.ufo7.so:../../..$(HAL_BM_TARGET_GFX)/lib64/hw/hwcomposer.ufo7.so \
+	$(TARGET_OUT)/lib64/hw/gralloc.autodetect.so:../../..$(HAL_BM_TARGET_GFX)/lib64/hw/gralloc.ufo7.so
 
 ifeq ($(USE_INTEL_UFO_OPENCL),true)
 PREBUILTS := $(shell cd $(LOCAL_PATH)/x86_64/ && find vendor/lib64 -not -type d)
